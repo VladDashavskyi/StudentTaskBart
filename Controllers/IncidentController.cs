@@ -29,14 +29,14 @@ public class IncidentController : ControllerBase
             return BadRequest("Contact not found");
         }
 
-        var incident = new StudentTaskBart.Incident;
+        var incident = new Incident { };
 
         _dbContext.Incidents.Add(incident);
         _dbContext.SaveChanges();
 
         return Ok(incident);
     }
-
+    
     [HttpGet]
     public IActionResult GetIncidents()
     {
